@@ -16,6 +16,7 @@
   - 2 Add Content to Files done
     - `echo "my first text" >> ~/homework/dir1/file1.txt`: This command appends the text "My first text" to the file file1.txt located in the directory ~/homework/dir1. The >> operator adds the text to the file without deleting its previous contents.
     - `cat ~/homework/dir1/file1.txt`: This command displays the contents of the file file1.txt in the terminal. cat stands for "concatenate," but it is often used to read and display file content.
+    - In this example, the path ~/homework/dir1/ is specifically used to indicate that the text search is being conducted in this particular directory. The ~ symbol represents the user's home directory, and *.txt is a pattern that covers all .txt files in the dir1 directory.
     - ![image](https://github.com/user-attachments/assets/14aa459f-766a-43e4-bcf0-71f8a7f1243d)
       
 **3. Using grep and find Commands ** 
