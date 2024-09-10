@@ -7,7 +7,7 @@
     - ![image](https://github.com/user-attachments/assets/8c427f0e-32b6-4038-a666-0c0162baadc8)
       
 **2. Linux Directory and File Creation**
-  - 1 Create Directories and Files done
+  - 1 Create Directories and Files
      - `ls`: This command lists the contents of the current directory. It shows all files and subdirectories within that directory.
      - `mkdir homework`: This command creates a new directory named homework. The mkdir stands for "make directory."
      - `mkdir dir1 dir2 dir3`:This creates three new directories named dir1, dir2, and dir3 in the current directory, all at once.
