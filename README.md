@@ -3,7 +3,7 @@
   - 1 Download and Install VirtualBox
   - 2 Download the Latest Ubuntu
   - 3 Install Ubuntu on VirtualBox
-    - ![install from scratch](https://github.com/user-attachments/assets/fa35e93d-fb81-4486-a2cc-021ce328d993)
+    - ![image](https://github.com/user-attachments/assets/3bf1f303-ad96-4e1c-9c41-7e58d4c0094b)
     - ![image](https://github.com/user-attachments/assets/8c427f0e-32b6-4038-a666-0c0162baadc8)
       
 **2. Linux Directory and File Creation**
