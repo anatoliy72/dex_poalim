@@ -39,3 +39,38 @@
 ### Saga Pattern
 - **Description**: The Saga pattern is used to manage distributed transactions across multiple microservices. Each service in the transaction completes a step, and if one step fails, the Saga coordinates compensating transactions to roll back changes.
 - **Why**: AML processes like fraud detection require multiple microservices to work together. If a step in the transaction fails, the Saga pattern ensures that previous steps are rolled back, maintaining consistency and reliability across the system.
+
+![image](https://github.com/user-attachments/assets/733a689b-5ad0-4233-865d-01e570b672e9)
+
+# AML Microservice Architecture
+
+## 1. **API Gateway**
+- **Description**: Central entry point for routing requests to microservices, handling authentication, logging, and security.
+- **Importance**: Simplifies client-side logic and ensures consistent request handling.
+
+## 2. **User Management Microservice**
+- **Description**: Manages user data, registration, and profile updates. Stores KYC info and provides data to other services.
+- **Importance**: Ensures accurate user tracking for compliance and risk monitoring.
+
+## 3. **AML Analysis Microservice**
+- **Description**: Analyzes transactions for suspicious activity using rules and AI models, flags risks for review.
+- **Importance**: Core service for detecting and preventing money laundering.
+
+## 4. **Notification Microservice**
+- **Description**: Sends alerts for flagged transactions via email, SMS, or other channels.
+- **Importance**: Ensures timely intervention and informs users and AML officers.
+
+## 5. **Authentication and Authorization Microservice**
+- **Description**: Manages login and role-based access, ensuring only authorized users access sensitive data.
+- **Importance**: Protects the system from unauthorized access.
+
+## 6. **Logging System**
+- **Description**: Centralized log collection from all microservices for tracking and auditing system activity.
+- **Importance**: Critical for audits and investigation of suspicious behavior.
+
+## 7. **Monitoring (Prometheus)**
+- **Description**: Monitors system health and performance, collecting metrics and raising alerts when needed.
+- **Importance**: Helps maintain system stability and quickly address failures.
+
+## Conclusion:
+By using an API Gateway multiple microservices can operate under a single API, making the system appear monolithic to the client while internally benefiting from the flexibility and scalability of microservices.
