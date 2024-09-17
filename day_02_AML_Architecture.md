@@ -49,7 +49,7 @@
 - **Importance**: Simplifies client-side logic and ensures consistent request handling.
 
 ## 2. **User Management Microservice**
-- **Description**: Manages user data, registration, and profile updates. Stores KYC info and provides data to other services.
+- **Description**: Manages user data, registration, and profile updates. Stores KYC (Know Your Customer) info and provides data to other services.
 - **Importance**: Ensures accurate user tracking for compliance and risk monitoring.
 
 ## 3. **AML Analysis Microservice**
