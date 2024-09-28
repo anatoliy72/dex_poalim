@@ -177,7 +177,7 @@ The output showed the web service on port `8080` and the Redis service on `6379`
 
 ![12](https://github.com/user-attachments/assets/56d3b30e-878a-4532-8f46-5ff3b0f30c5e)
 
-## Conclusion
+## Bottom line...
 This was supposed to be a simple task: setting up an Nginx web server using Docker. 
 But despite following the steps and troubleshooting, it didn’t work out for me. Clearing the cache and rebuilding without cache didn’t fix the issue. If you try this, I hope you’ll have better luck!
 
