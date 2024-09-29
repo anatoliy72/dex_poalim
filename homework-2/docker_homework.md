@@ -81,9 +81,7 @@ At this point, I expected to see my `index.html` content, but...
 It didn’t work. Instead of my custom HTML, I saw the default Nginx welcome page. So, I started troubleshooting.
 
 #### 8.1 Clear Browser Cache
-Maybe it was the browser cache showing the default page. I tried clearing the cache:
-
-- Cleared my browser's cache
+I tried clearing the cache:
 
 ![08](https://github.com/user-attachments/assets/4ed31dae-1426-4109-a091-f2848b5b349a)
 
@@ -114,8 +112,6 @@ Next, I decided to see if the `index.html` file was actually in the container.
 **... and it's working!!!!!**
 
 ![image](https://github.com/user-attachments/assets/324aa2d8-967c-4568-aa3e-524c93fdef15)
-
-![10](https://github.com/user-attachments/assets/20a1042b-ede9-4603-a176-bbea4201f075)
 
 ---
 
