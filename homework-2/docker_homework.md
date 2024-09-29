@@ -66,27 +66,8 @@ docker ps
 It looked like everything was set up correctly; my container was running, and the ports were mapped as expected (`8080:80`).
 
 ### Step 7: Open the Web Application in Your Browser
-I opened my web browser and navigated to:
 
-```
-http://localhost:8080
-```
-
-At this point, I expected to see my `index.html` content, but...
-
-![07](https://github.com/user-attachments/assets/6bf7a6ef-9e0f-4d74-8bfa-95fdf0837be9)
-
-### Step 8: Troubleshooting
-
-It didn’t work. Instead of my custom HTML, I saw the default Nginx welcome page. So, I started troubleshooting.
-
-#### 8.1 Clear Browser Cache
-I tried clearing the cache:
-
-![08](https://github.com/user-attachments/assets/4ed31dae-1426-4109-a091-f2848b5b349a)
-
-#### 8.2 Verify File in Container
-Next, I decided to see if the `index.html` file was actually in the container.
+#### 7.2 Verify File in Container
 
 1. I got the container ID:
    ```bash
@@ -109,7 +90,6 @@ Next, I decided to see if the `index.html` file was actually in the container.
    ```
 ![image](https://github.com/user-attachments/assets/72915bd2-7f78-46d1-861e-0d8b23f33f43)
 
-**... and it's working!!!!!**
 
 ![image](https://github.com/user-attachments/assets/324aa2d8-967c-4568-aa3e-524c93fdef15)
 
