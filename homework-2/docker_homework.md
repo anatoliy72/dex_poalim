@@ -47,7 +47,7 @@ I created an `index.html` file with some simple content that Nginx should serve.
 To build the Docker image, I ran this command in my project directory:
 
 ```bash
-docker build -t my-nginx-app .
+docker build --no-cache -t my-nginx-app .
 ```
 
 ![03](https://github.com/user-attachments/assets/940f44dc-960d-4864-a856-7fc3b37b7167)
