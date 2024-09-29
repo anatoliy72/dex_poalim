@@ -83,10 +83,9 @@ It didn’t work. Instead of my custom HTML, I saw the default Nginx welcome pag
 #### 8.1 Clear Browser Cache
 Maybe it was the browser cache showing the default page. I tried clearing the cache:
 
-- Cleared my browser's cache and tried again.
-![08](https://github.com/user-attachments/assets/4ed31dae-1426-4109-a091-f2848b5b349a)
+- Cleared my browser's cache
 
-But that didn’t fix it.
+![08](https://github.com/user-attachments/assets/4ed31dae-1426-4109-a091-f2848b5b349a)
 
 #### 8.2 Verify File in Container
 Next, I decided to see if the `index.html` file was actually in the container.
