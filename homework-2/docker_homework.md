@@ -116,7 +116,7 @@ Next, I decided to see if the `index.html` file was actually in the container.
 
 2. I entered the running container:
    ```bash
-   docker exec -it <container_id> bash
+   docker exec -it b86 bash
    ```
 
 3. I checked if the file was in the correct directory:
