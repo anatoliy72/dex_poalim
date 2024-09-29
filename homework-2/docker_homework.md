@@ -1,8 +1,6 @@
 
 # Docker homework
 
-Let me tell you how it didn’t work out for me.
-
 ## Steps:
 
 ### Step 1: Create Your Project Directory
@@ -47,10 +45,9 @@ I created an `index.html` file with some simple content that Nginx should serve.
 To build the Docker image, I ran this command in my project directory:
 
 ```bash
-docker build --no-cache -t my-nginx-app .
+docker build --no-cache -t my-nginx-app -f Dockerfile .
 ```
-
-![03](https://github.com/user-attachments/assets/940f44dc-960d-4864-a856-7fc3b37b7167)
+![image](https://github.com/user-attachments/assets/e8370cbd-c247-4db7-b7be-5e5db2866984)
 
 ### Step 5: Run the Docker Container
 Once the image was built, I ran the container and mapped it to port `8080` on my local machine:
@@ -91,22 +88,7 @@ Maybe it was the browser cache showing the default page. I tried clearing the ca
 
 But that didn’t fix it.
 
-#### 8.2 Rebuild Docker Image Without Cache
-Then, I thought maybe Docker was using cached layers, so I rebuilt the image without cache:
-
-```bash
-docker build --no-cache -t my-nginx-app -f Dockerfile .
-```
-
-And ran the container again:
-
-```bash
-docker run -dp 8080:80 my-nginx-app
-```
-![05](https://github.com/user-attachments/assets/83a08ed0-bdd1-4caa-a581-e903ea32fed1)
-
-
-#### 8.3 Verify File in Container
+#### 8.2 Verify File in Container
 Next, I decided to see if the `index.html` file was actually in the container.
 
 1. I got the container ID:
@@ -116,7 +98,7 @@ Next, I decided to see if the `index.html` file was actually in the container.
 
 2. I entered the running container:
    ```bash
-   docker exec -it b86 bash
+   docker exec -it a03 bash
    ```
 
 3. I checked if the file was in the correct directory:
@@ -128,11 +110,11 @@ Next, I decided to see if the `index.html` file was actually in the container.
    ```bash
    cat /usr/share/nginx/html/index.html
    ```
-![06](https://github.com/user-attachments/assets/520fee8f-36fb-418b-838e-d6a821016d1d)
+![image](https://github.com/user-attachments/assets/72915bd2-7f78-46d1-861e-0d8b23f33f43)
 
-Everything seemed right in the container, but...
+**... and it's working!!!!!**
 
-**Oops... and it's still not working.**
+![image](https://github.com/user-attachments/assets/324aa2d8-967c-4568-aa3e-524c93fdef15)
 
 ![10](https://github.com/user-attachments/assets/20a1042b-ede9-4603-a176-bbea4201f075)
 
@@ -177,16 +159,3 @@ The output showed the web service on port `8080` and the Redis service on `6379`
 
 ![12](https://github.com/user-attachments/assets/56d3b30e-878a-4532-8f46-5ff3b0f30c5e)
 
-but again without custom message
-
-![image](https://github.com/user-attachments/assets/5b1fea47-0dff-40c9-a5f6-1bf03dcbbdf5)
-![image](https://github.com/user-attachments/assets/b585a165-0d61-45c9-901a-59a2b4ae1fa2)
-![image](https://github.com/user-attachments/assets/d4084830-2f62-4fed-a2a4-8f4279e4d792)
-![image](https://github.com/user-attachments/assets/af1de23a-0718-4620-869f-b77a84d615c5)
-
-
-## Bottom line...
-This was supposed to be a simple task: setting up an Nginx web server using Docker. 
-But despite following the steps and troubleshooting, it didn’t work out for me. Clearing the cache and rebuilding without cache didn’t fix the issue. If you try this, I hope you’ll have better luck!
-
----
