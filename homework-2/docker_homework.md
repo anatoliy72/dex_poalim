@@ -149,13 +149,13 @@ With everything set up, I executed the following command to start both services:
 docker-compose up -d
 ```
 
-This started both the Nginx web service and the Redis service. When I ran `docker ps`, I saw both containers up and running:
+This started both the Nginx web service and the Redis service. When I run `docker ps`, I saw both containers up and running:
 
 ```bash
 docker ps
 ```
 
-The output showed the web service on port `8080` and the Redis service on `6379`. Everything looked good.
+The output showed the web service on port `8080` and the Redis service on default port `6379`. Everything looked good.
 
 ![12](https://github.com/user-attachments/assets/56d3b30e-878a-4532-8f46-5ff3b0f30c5e)
 
