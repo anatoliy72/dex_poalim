@@ -95,7 +95,7 @@ But that didn’t fix it.
 Then, I thought maybe Docker was using cached layers, so I rebuilt the image without cache:
 
 ```bash
-docker build --no-cache -t my-nginx-app .
+docker build --no-cache -t my-nginx-app -f Dockerfile .
 ```
 
 And ran the container again:
