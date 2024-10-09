@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
+        DOCKER_CREDENTIALS_ID = 'dijem72'
         IMAGE_NAME = 'dijem72/jenkins-demo' 
         DOCKER_IMAGE_TAG = "${env.JOB_NAME}_${env.BUILD_NUMBER}"
     }
