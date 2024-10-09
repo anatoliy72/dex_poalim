@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+    environment {
+        DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
+        IMAGE_NAME = 'dijem72/jenkins-demo'
+        DOCKER_IMAGE_TAG = "${env.JOB_NAME}_${env.BUILD_NUMBER}"
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/yourusername/your-repo.git', branch: 'master'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    dockerImage = docker.build("${IMAGE_NAME}:${DOCKER_IMAGE_TAG}")
+                }
+            }
+        }
+        stage('Push to Docker Hub') {
+            steps {
+                script {
+                    docker.withRegistry('', DOCKER_CREDENTIALS_ID) {
+                        dockerImage.push()
+                        dockerImage.push('latest')
+                    }
+                }
+            }
+        }
+    }
+    post {
+        always {
+            script {
+                sh "docker rmi ${IMAGE_NAME}:${DOCKER_IMAGE_TAG} || true"
+                sh "docker rmi ${IMAGE_NAME}:latest || true"
+            }
+        }
+        success {
+            echo "Docker image '${IMAGE_NAME}:${DOCKER_IMAGE_TAG}' pushed successfully."
+        }
+    }
+}
