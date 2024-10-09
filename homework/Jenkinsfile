@@ -11,13 +11,15 @@ pipeline {
                 git url: 'https://github.com/anatoliy72/dex_poalim.git', branch: 'main'
             }
         }
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    dockerImage = docker.build("${IMAGE_NAME}:${DOCKER_IMAGE_TAG}", "-f homework/Dockerfile .")
-                }
+      stage('Build Docker Image') {
+         steps {
+           dir('homework') {
+               script {
+                 dockerImage = docker.build("${IMAGE_NAME}:${DOCKER_IMAGE_TAG}")
+                   }
             }
         }
+      }
         stage('Push to Docker Hub') {
             steps {
                 script {
