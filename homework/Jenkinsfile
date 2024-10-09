@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/yourusername/your-repo.git', branch: 'master'
+                git url: 'https://github.com/anatoliy72/dex_poalim.git', branch: 'main'
             }
         }
         stage('Build Docker Image') {
