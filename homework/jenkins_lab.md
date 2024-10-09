@@ -9,7 +9,9 @@
 ![08](https://github.com/user-attachments/assets/a418251d-5634-4a3c-89c4-8e66dacdd8ce)
 
 dockerfile
-```FROM jenkins/jenkins:lts
+```
+FROM jenkins/jenkins:lts
+
 
 RUN jenkins-plugin-cli --plugins \
     git \
@@ -18,6 +20,7 @@ RUN jenkins-plugin-cli --plugins \
 
 USER root
 
+
 RUN apt-get update && \
     apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release && \
     curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
@@ -25,13 +28,19 @@ RUN apt-get update && \
     apt-get update && \
     apt-get install -y docker-ce-cli
 
-RUN usermod -aG docker jenkins
+
+ARG DOCKER_GID=124
+
+
+RUN groupadd -for -g ${DOCKER_GID} docker && \
+    usermod -aG docker jenkins
 
 USER jenkins
 
 
 ENV JENKINS_USER=admin
 ENV JENKINS_PASS=admin123
+
 
 ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
 
