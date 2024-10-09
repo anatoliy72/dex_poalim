@@ -47,7 +47,7 @@ pipeline {
     agent any
     environment {
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
-        IMAGE_NAME = 'dijem72/jenkins-demo' // Ваш логин Docker Hub и имя образа
+        IMAGE_NAME = 'dijem72/jenkins-demo' 
         DOCKER_IMAGE_TAG = "${env.JOB_NAME}_${env.BUILD_NUMBER}"
     }
     stages {
