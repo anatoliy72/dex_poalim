@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_CREDENTIALS_ID = 'dijem72'
-        IMAGE_NAME = 'dijem72/jenkins-demo' 
+        IMAGE_NAME = 'dijem72/jenkins-demo'
         DOCKER_IMAGE_TAG = "${env.JOB_NAME}_${env.BUILD_NUMBER}"
     }
     stages {
@@ -14,7 +14,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    dockerImage = docker.build("${IMAGE_NAME}:${DOCKER_IMAGE_TAG}")
+                    dockerImage = docker.build("${IMAGE_NAME}:${DOCKER_IMAGE_TAG}", "-f homework/Dockerfile .")
                 }
             }
         }
