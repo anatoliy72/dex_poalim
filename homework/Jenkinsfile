@@ -20,7 +20,7 @@ pipeline {
             steps {
                 dir('homework') {
                     script {
-                        dockerImage = docker.build("${IMAGE_NAME}:${DOCKER_IMAGE_TAG}", "-f homework/Dockerfile homework")
+                        dockerImage = docker.build("${IMAGE_NAME}:${DOCKER_IMAGE_TAG}")
                     }
                 }
             }
