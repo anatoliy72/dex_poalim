@@ -1,5 +1,3 @@
-![01](https://github.com/user-attachments/assets/ceaf031e-881e-4719-b604-920192b87211)
-![03](https://github.com/user-attachments/assets/c69025a2-b74d-4f60-84f4-e42bf031b7b2)
 
 apiVersion: v1
 kind: Namespace
@@ -19,13 +17,14 @@ metadata:
   labels:
     app: my-app
 spec:
+  type: NodePort  
   selector:
     app: my-app
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: ClusterIP
+      port: 80          
+      targetPort: 80    
+      nodePort: 30007   
 
 
 apiVersion: apps/v1
@@ -51,5 +50,5 @@ spec:
         ports:
         - containerPort: 80
 
-
+![image](https://github.com/user-attachments/assets/201ef232-7074-4b8a-82d9-9ae4c7d9cea0)
 
